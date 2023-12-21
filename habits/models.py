@@ -23,17 +23,20 @@ class Habit(models.Model):
     is_public = models.BooleanField(default=False, verbose_name=_('Is Public'), **NULLABLE)
 
     def calculate_next_notification_time(self):
-        now = timezone.now()
-        today = now.date()
-        habit_time = datetime.combine(today, self.time)
-        habit_time = timezone.make_aware(habit_time, timezone.get_current_timezone())
+        if self.time is not None:
+            now = timezone.now()
+            today = now.date()
+            habit_time = datetime.combine(today, self.time)
+            habit_time = timezone.make_aware(habit_time, timezone.get_current_timezone())
 
-        while habit_time <= now:
-            habit_time += timedelta(days=self.frequency)
-        return habit_time
+            while habit_time <= now:
+                habit_time += timedelta(days=self.frequency)
+            return habit_time
+        return None
 
     def save(self, *args, **kwargs):
-        self.next_notification_time = self.calculate_next_notification_time()
+        if self.time is not None:
+            self.next_notification_time = self.calculate_next_notification_time()
         super().save(*args, **kwargs)
 
     def __str__(self):
