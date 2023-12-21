@@ -21,7 +21,6 @@ from config.views import about_blank
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', about_blank),
     path('users/', include('users.urls', namespace='users')),
-
+    path('', include('habits.urls', namespace='habits')),
 ]
