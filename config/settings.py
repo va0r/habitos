@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django_filters',
 
-    # 'users',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -121,7 +121,7 @@ MEDIA_ROOT = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Модель аутентификации пользователя и редиректы
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
 
 # DRF
 
