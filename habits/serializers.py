@@ -11,16 +11,16 @@ class HabitSerializer(serializers.ModelSerializer):
     def validate(self, data):
         related_habit = data.get('related_habit')
         reward = data.get('reward')
-        estimated_time = data.get('estimated_time')
-        is_pleasant_habit = data.get('is_pleasant_habit')
-        frequency = data.get('frequency')
+        estimated_time = data.get('estimated_time', 2)
+        is_pleasant_habit = data.get('is_pleasant_habit', False)
+        frequency = data.get('frequency', 1)
 
         if related_habit and reward:
             raise serializers.ValidationError(
                 'Привычка не может иметь одновременно связанную привычку и вознаграждение.'
             )
 
-        if estimated_time > 120:
+        if int(estimated_time) > 120:
             raise serializers.ValidationError(
                 'Оценочное время выполнения не должно превышать 60 мин.'
             )
@@ -36,7 +36,7 @@ class HabitSerializer(serializers.ModelSerializer):
                     'Приятная привычка не может иметь вознаграждение или связанную привычку.'
                 )
 
-        if frequency < 7:
+        if int(frequency) < 7:
             raise serializers.ValidationError(
                 'Частота выполнения привычки не должна быть меньше 7 дней.'
             )
