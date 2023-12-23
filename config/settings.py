@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'django_filters',
+    'drf_yasg',
+    'corsheaders',
+    'django_celery_beat',
 
     'users',
     'habits',
@@ -158,6 +161,7 @@ if CACHE_ENABLED:
 
 # EMAIL
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT = os.getenv('EMAIL_PORT')
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
@@ -169,3 +173,31 @@ EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS') == 'True'
 
 if 'test' in sys.argv:
     CELERY_BROKER_URL = 'memory://'
+
+# OTHER
+
+CORS_ALLOWED_ORIGINS = [
+    "https://read-only.example.com",
+    "https://read-and-write.example.com",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://read-and-write.example.com",
+]
+
+CELERY_BROKER_URL = "redis://redis:6379/0"
+CELERY_RESULT_BACKEND = "redis://redis:6379/0"
+CELERY_TIMEZONE = 'UTC'
+CELERY_TASK_TRACK_STARTED = True
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+CELERY_BROKER_CHANNEL_ERROR_RETRY = True
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_BEAT_SCHEDULE = {
+    'task-disconnect_inactive_users': {
+        'task': 'users.tasks.disconnect_inactive_users',  # Путь к задаче
+        'schedule': timedelta(minutes=2),  # Расписание выполнения задачи (например, каждые 10 минут)
+    },
+    'send_habit_notification': {
+        'task': 'habits.tasks.send_habit_notification',  # Путь к задаче
+        'schedule': timedelta(days=1),
+    },
+}
