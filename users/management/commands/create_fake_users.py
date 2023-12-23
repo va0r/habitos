@@ -28,7 +28,7 @@ class Command(BaseCommand):
             phone = fake.phone_number()
             city = fake.city()
             avatar = fake.image_url()
-            telegram_id = fake.uuid4()
+            telegram_id = 'sotibah'
 
             user = manager.create_user(
                 email=email,
