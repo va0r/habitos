@@ -198,6 +198,7 @@ CELERY_BEAT_SCHEDULE = {
     },
     'send_habit_notification': {
         'task': 'habits.tasks.send_habit_notification',  # Путь к задаче
-        'schedule': timedelta(days=1),
+        # 'schedule': timedelta(days=1),
+        'schedule': timedelta(minutes=5),
     },
 }

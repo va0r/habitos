@@ -11,7 +11,7 @@ omit =
     */*/urls.py
     dump.py
     load.py
-    constants.py
+    */constants.py
     manage.py
     */*/management/*/*
     */tests/*

@@ -1,3 +1,5 @@
+from types import NoneType
+
 from rest_framework import serializers
 
 from habits.models import Habit
@@ -11,18 +13,18 @@ class HabitSerializer(serializers.ModelSerializer):
     def validate(self, data):
         related_habit = data.get('related_habit')
         reward = data.get('reward')
-        estimated_time = data.get('estimated_time', 2)
+        estimated_time = data.get('estimated_time', 10)
         is_pleasant_habit = data.get('is_pleasant_habit', False)
-        frequency = data.get('frequency', 1)
+        frequency = data.get('frequency', 10)
 
         if related_habit and reward:
             raise serializers.ValidationError(
                 'Привычка не может иметь одновременно связанную привычку и вознаграждение.'
             )
 
-        if int(estimated_time) > 120:
+        if type(estimated_time) is not NoneType and int(estimated_time) > 120:
             raise serializers.ValidationError(
-                'Оценочное время выполнения не должно превышать 60 мин.'
+                'Оценочное время выполнения не должно превышать 120 мин.'
             )
 
         if related_habit and not related_habit.is_pleasant_habit:
@@ -36,7 +38,7 @@ class HabitSerializer(serializers.ModelSerializer):
                     'Приятная привычка не может иметь вознаграждение или связанную привычку.'
                 )
 
-        if int(frequency) < 7:
+        if type(frequency) is not NoneType and int(frequency) < 7:
             raise serializers.ValidationError(
                 'Частота выполнения привычки не должна быть меньше 7 дней.'
             )

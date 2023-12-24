@@ -5,7 +5,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext as _
 
-from constants import NULLABLE
+from config.constants import NULLABLE
 
 User = get_user_model()
 
@@ -17,9 +17,9 @@ class Habit(models.Model):
     action = models.CharField(max_length=255, verbose_name=_('Action'))
     is_pleasant_habit = models.BooleanField(default=False, verbose_name=_('Is Pleasant Habit'), **NULLABLE)
     related_habit = models.ForeignKey('self', on_delete=models.SET_NULL, **NULLABLE, verbose_name=_('Related Habit'))
-    frequency = models.PositiveIntegerField(default=1, verbose_name=_('Frequency (days)'), **NULLABLE)
+    frequency = models.PositiveIntegerField(default=10, verbose_name=_('Frequency (days)'), **NULLABLE)
     reward = models.CharField(max_length=255, verbose_name=_('Reward'), **NULLABLE)
-    estimated_time = models.PositiveIntegerField(default=2, verbose_name=_('Estimated Time (minutes)'), **NULLABLE)
+    estimated_time = models.PositiveIntegerField(default=10, verbose_name=_('Estimated Time (minutes)'), **NULLABLE)
     is_public = models.BooleanField(default=False, verbose_name=_('Is Public'), **NULLABLE)
 
     def calculate_next_notification_time(self):

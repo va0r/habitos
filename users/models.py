@@ -2,7 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext as _
 
-from constants import NULLABLE
+from config.constants import NULLABLE
 from users.managers import CustomUserManager
 
 
