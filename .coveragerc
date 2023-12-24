@@ -9,10 +9,11 @@ omit =
     */*/tasks.py
     */*/services.py
     */*/urls.py
-    dump.py
-    load.py
+    */dump.py
+    */load.py
     */constants.py
     manage.py
     */*/management/*/*
     */tests/*
-    0.py
+    */data/*
+    */scripts/*
