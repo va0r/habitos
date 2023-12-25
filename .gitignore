@@ -4,3 +4,4 @@
 /.pytest_cache/
 /logs/
 /.coverage
+/celerybeat-schedule
