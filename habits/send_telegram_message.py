@@ -10,6 +10,4 @@ def send_telegram_message(token, telegram_id, message):
 
     response = requests.post(url, data=data)
 
-    print(f'{response.__dict__ = }')
-
     return response.json()
