@@ -10,7 +10,7 @@ from .send_telegram_message import send_telegram_message
 
 @shared_task
 def send_habit_notification():
-    now_time = timezone.now() + timedelta(hours=2)  # расчет времени для региона
+    now_time = timezone.now()
     token = os.getenv('TELEGRAM_BOT_TOKEN')
     habits_with_users = Habit.objects.filter(user__telegram_id__isnull=False).prefetch_related('user')
 
