@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -131,7 +132,7 @@ AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 5,
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
@@ -143,8 +144,8 @@ REST_FRAMEWORK = {
 # Настройки срока действия токенов
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'UPDATE_LAST_LOGIN': True,
 }
 
@@ -169,10 +170,6 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL') == 'True'
 EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS') == 'True'
 
-# Используйте тестовый брокер в режиме тестирования
-
-if 'test' in sys.argv:
-    CELERY_BROKER_URL = 'memory://'
 
 # OTHER
 
@@ -184,21 +181,25 @@ CSRF_TRUSTED_ORIGINS = [
     "https://read-and-write.example.com",
 ]
 
-CELERY_BROKER_URL = "redis://redis:6379/0"
+if 'test' in sys.argv:
+    CELERY_BROKER_URL = 'memory://'
+else:
+    CELERY_BROKER_URL = "redis://redis:6379/0"
 CELERY_RESULT_BACKEND = "redis://redis:6379/0"
 CELERY_TIMEZONE = 'UTC'
 CELERY_TASK_TRACK_STARTED = True
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 CELERY_BROKER_CHANNEL_ERROR_RETRY = True
+
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
 CELERY_BEAT_SCHEDULE = {
     'task-disconnect_inactive_users': {
-        'task': 'users.tasks.disconnect_inactive_users',  # Путь к задаче
-        'schedule': timedelta(minutes=2),
+        'task': 'users.tasks.disconnect_inactive_users',
+        'schedule': timedelta(minutes=10),
     },
     'send_habit_notification': {
-        'task': 'habits.tasks.send_habit_notification',  # Путь к задаче
-        # 'schedule': timedelta(days=1),
-        'schedule': timedelta(minutes=5),
+        'task': 'habits.tasks.send_habit_notification',
+        'schedule': timedelta(minutes=10),
     },
 }
