@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
     'corsheaders',
-    'django_celery_beat',
+    # 'django_celery_beat',
 
     'users',
     'habits',
@@ -174,33 +174,10 @@ EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS') == 'True'
 # OTHER
 
 CORS_ALLOWED_ORIGINS = [
-    "*",
+    "http://127.0.0.1:8000",
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "*",
+    "http://127.0.0.1:8000",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
-
-if 'test' in sys.argv:
-    CELERY_BROKER_URL = 'memory://'
-else:
-    CELERY_BROKER_URL = "redis://redis:6379/0"
-CELERY_RESULT_BACKEND = "redis://redis:6379/0"
-CELERY_TIMEZONE = 'Europe/Moscow'
-CELERY_TASK_TRACK_STARTED = True
-CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
-CELERY_BROKER_CHANNEL_ERROR_RETRY = True
-
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-
-CELERY_BEAT_SCHEDULE = {
-    'task-disconnect_inactive_users': {
-        'task': 'users.tasks.disconnect_inactive_users',
-        'schedule': timedelta(minutes=10),
-    },
-    'send_habit_notification': {
-        'task': 'habits.tasks.send_habit_notification',
-        'schedule': timedelta(minutes=10),
-    },
-}
