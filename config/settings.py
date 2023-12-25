@@ -174,12 +174,13 @@ EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS') == 'True'
 # OTHER
 
 CORS_ALLOWED_ORIGINS = [
-    "https://read-only.example.com",
-    "https://read-and-write.example.com",
+    "*",
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://read-and-write.example.com",
+    "*",
 ]
+
+CORS_ALLOW_ALL_ORIGINS = False
 
 if 'test' in sys.argv:
     CELERY_BROKER_URL = 'memory://'
