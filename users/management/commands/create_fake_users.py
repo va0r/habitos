@@ -37,7 +37,7 @@ class Command(BaseCommand):
                 city=city,
                 avatar=avatar,
                 telegram_id=telegram_id,
-                role=UserRoles.MEMBER
+                role=UserRoles.MEMBER,
             )
 
             self.stdout.write(self.style.SUCCESS(f'User created: {user}'))

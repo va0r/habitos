@@ -21,6 +21,9 @@ class Habit(models.Model):
     reward = models.CharField(max_length=255, verbose_name=_('Reward'), **NULLABLE)
     estimated_time = models.PositiveIntegerField(default=10, verbose_name=_('Estimated Time (minutes)'), **NULLABLE)
     is_public = models.BooleanField(default=False, verbose_name=_('Is Public'), **NULLABLE)
+    last_action_datetime = models.DateTimeField(default=datetime(year=2000, month=1, day=1,
+                                                                 hour=00, minute=00, second=00),
+                                                verbose_name=_('Last Action'))
 
     def calculate_next_notification_time(self):
         if self.time is not None:

@@ -38,7 +38,7 @@ class Command(BaseCommand):
                 frequency=random.randint(1, 7),
                 reward=fake.word(),
                 estimated_time=random.randint(1, 60),
-                is_public=is_public
+                is_public=is_public,
             )
 
             self.stdout.write(self.style.SUCCESS(f'Habit created: {habit}'))
