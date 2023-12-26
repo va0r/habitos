@@ -1,5 +1,5 @@
 import os
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 from celery import shared_task
 from django.utils import timezone
@@ -10,19 +10,19 @@ from .send_telegram_message import send_telegram_message
 
 @shared_task
 def send_habit_notification():
-    now_time = timezone.now()
-    print(f'{now_time = }')
+    now_datetime = timezone.now() + timedelta(hours=3)
     token = os.getenv('TELEGRAM_BOT_TOKEN')
-    print(f'{token = }')
     habits_with_users = Habit.objects.filter(user__telegram_id__isnull=False).prefetch_related('user')
-    print(f'{habits_with_users = }')
 
     for habit in habits_with_users:
-        habit_time = datetime.combine(now_time.date(), habit.time)
-        habit_time_aware = timezone.make_aware(habit_time, now_time.tzinfo)
-
-        if habit_time_aware <= now_time - timedelta(minutes=5):
+        habit_last_datetime = habit.last_action_datetime + timedelta(hours=3)
+        frequency = habit.frequency
+        time = habit.time
+        habit_next_datetime = habit_last_datetime + timedelta(days=frequency, hours=time.hour, minutes=time.minute - 5)
+        if habit_next_datetime <= now_datetime:
             message = f'Через 5 минут необходимо выполнять вашу привычку! ' \
                       f'Вам необходимо выполнить: {habit.action} ' \
                       f'После этого вы сможете вознаградить себя: {habit.reward if habit.reward else habit.related_habit}'
+            habit.last_action_datetime = now_datetime - timedelta(hours=3)
+            habit.save()
             send_telegram_message(token=token, telegram_id=habit.user.telegram_id, message=message)

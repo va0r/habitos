@@ -213,6 +213,6 @@ CELERY_BEAT_SCHEDULE = {
     },
     'send_habit_notification': {
         'task': 'habits.tasks.send_habit_notification',
-        'schedule': timedelta(minutes=1),
+        'schedule': timedelta(seconds=15),
     },
 }
