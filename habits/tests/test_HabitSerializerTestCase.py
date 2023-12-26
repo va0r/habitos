@@ -58,7 +58,7 @@ class HabitSerializerTestCase(TestCase):
     def test_frequency(self):
         data = {
             "action": "Morning exercise",
-            "frequency": 1,
+            "frequency": 10,
         }
 
         serializer = HabitSerializer(data=data)

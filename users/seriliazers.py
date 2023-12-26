@@ -25,5 +25,3 @@ class UserSerializer(serializers.ModelSerializer):
             "is_active",
             "password"
         )
-
-

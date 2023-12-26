@@ -27,5 +27,5 @@ if __name__ == '__main__':
         try:
             os.system(f'python3 ../manage.py dumpdata {app_name} > {json_file_path}')
             print(f'{app.upper()} dumped to {json_file_path}')
-        except OSError as e:
+        except OSError:
             print(f'{OSError = }')

@@ -10,4 +10,3 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         Habit.objects.all().delete()
         User.objects.exclude(email__in=['admin@admin.admin', 'mod@mod.mod']).delete()
-
