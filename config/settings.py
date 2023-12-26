@@ -209,7 +209,7 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_BEAT_SCHEDULE = {
     'task-disconnect_inactive_users': {
         'task': 'users.tasks.disconnect_inactive_users',
-        'schedule': timedelta(minutes=1),
+        'schedule': timedelta(hours=1),
     },
     'send_habit_notification': {
         'task': 'habits.tasks.send_habit_notification',

@@ -31,13 +31,13 @@ class Command(BaseCommand):
             habit = Habit.objects.create(
                 user=user,
                 place=fake.word(),
-                time=time(hour=random.randint(0, 23), minute=random.randint(0, 59)),
+                time=time(hour=random.randint(9, 21), minute=random.randint(0, 59)),
                 action=fake.sentence(),
                 is_pleasant_habit=is_pleasant_habit,
                 related_habit=None,  # You can customize this as needed
                 frequency=random.randint(1, 7),
                 reward=fake.word(),
-                estimated_time=random.randint(1, 120),
+                estimated_time=random.randint(1, 60),
                 is_public=is_public
             )
 

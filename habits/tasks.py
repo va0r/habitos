@@ -11,8 +11,11 @@ from .send_telegram_message import send_telegram_message
 @shared_task
 def send_habit_notification():
     now_time = timezone.now()
+    print(f'{now_time = }')
     token = os.getenv('TELEGRAM_BOT_TOKEN')
+    print(f'{token = }')
     habits_with_users = Habit.objects.filter(user__telegram_id__isnull=False).prefetch_related('user')
+    print(f'{habits_with_users = }')
 
     for habit in habits_with_users:
         habit_time = datetime.combine(now_time.date(), habit.time)

@@ -15,7 +15,7 @@ class HabitSerializer(serializers.ModelSerializer):
         reward = data.get('reward')
         estimated_time = data.get('estimated_time', 10)
         is_pleasant_habit = data.get('is_pleasant_habit', False)
-        frequency = data.get('frequency', 10)
+        frequency = data.get('frequency', 1)
 
         if related_habit and reward:
             raise serializers.ValidationError(
@@ -38,9 +38,9 @@ class HabitSerializer(serializers.ModelSerializer):
                     'Приятная привычка не может иметь вознаграждение или связанную привычку.'
                 )
 
-        if type(frequency) is not NoneType and int(frequency) < 7:
+        if type(frequency) is not NoneType and int(frequency) > 7:
             raise serializers.ValidationError(
-                'Частота выполнения привычки не должна быть меньше 7 дней.'
+                'Частота выполнения привычки не должна быть больше 7 дней.'
             )
 
         return data
