@@ -17,3 +17,6 @@ omit =
     */tests/*
     */data/*
     */scripts/*
+
+[html]
+directory = coverage_html_report
