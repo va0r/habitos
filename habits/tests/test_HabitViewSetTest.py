@@ -13,7 +13,7 @@ from users.managers import CustomUserManager
 class HabitViewSetTest(TestCase):
 
     def setUp(self):
-        self.user = User.objects.create(email="testuser@example.com", password="password", telegram_id ='6309910328')
+        self.user = User.objects.create(email="testuser@example.com", password="password", telegram_id='6309910328')
         self.token = os.getenv('TELEGRAM_BOT_TOKEN')
 
     @patch('habits.views.send_telegram_message')
