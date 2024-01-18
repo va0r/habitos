@@ -1,1 +1,266 @@
-[{"model": "users.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$600000$mdx6B7hgmGFPmaN2wq2iER$I8qBRJ9kB9QaGwrj4R6V39lmsNZcLYjn2+STa7CMRww=", "last_login": "2024-01-18T17:06:55.346Z", "is_superuser": true, "first_name": "", "last_name": "", "is_staff": true, "is_active": true, "date_joined": "2023-12-21T15:58:57.720Z", "email": "admin@admin.admin", "telegram_id": null, "phone": null, "city": null, "avatar": "", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$720000$Ltow0CJ5xEb5mxsDlQtTah$5dpAThU6AmPStrDHz1gdGxwekBZumpJnEKh7cZ2f7Yk=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2023-12-21T16:04:19.677Z", "email": "mod@mod.mod", "telegram_id": null, "phone": null, "city": null, "avatar": "", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 3, "fields": {"password": "pbkdf2_sha256$600000$5ATjhYxXJCi97LTViJkvYG$oOVakvAiCKAy+pV3CBGrrFT5snnIhJdnkz4KV8h1/84=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:48.515Z", "email": "grigorevevgraf@example.net", "telegram_id": "6309910328", "phone": "8 (607) 391-5704", "city": "п. Шелагонцы", "avatar": "https://dummyimage.com/742x655", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 4, "fields": {"password": "pbkdf2_sha256$600000$3B4nophxTFL7ZkxUNREwe4$gezU1RcQ/9p/CQbPcYV4GqvNkri8s9flleuUYnqSbzA=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:48.757Z", "email": "mechislav2019@example.org", "telegram_id": "6309910328", "phone": "8 062 425 52 59", "city": "п. Старая Русса", "avatar": "https://dummyimage.com/920x37", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 5, "fields": {"password": "pbkdf2_sha256$600000$cCYoEkKq44fibUbCv6DxZP$aoehky/ZqbI2dfzqpBy3VeAqGbDF3VkiClZOCugBP+s=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:48.996Z", "email": "evdokim_31@example.org", "telegram_id": "6309910328", "phone": "83947331368", "city": "ст. Бавлы", "avatar": "https://placekitten.com/59/535", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 6, "fields": {"password": "pbkdf2_sha256$600000$Q4C3P73PC5HQ67Ng8wXsAy$4SgqWRDQ3nzNGpaLNsXSb8z9CE7n1W/Rbfj/Ou9Jyv4=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:49.233Z", "email": "samson_57@example.com", "telegram_id": "6309910328", "phone": "8 101 971 76 20", "city": "ст. Осташков", "avatar": "https://picsum.photos/883/693", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 7, "fields": {"password": "pbkdf2_sha256$600000$BSoix4UaIxeKQN7glln8YX$10jQGNnw9dm1zBz0tFSTwuBapXMl7O+z3fz+CljHHt0=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:49.465Z", "email": "tvorimir_1996@example.org", "telegram_id": "6309910328", "phone": "81049701635", "city": "г. Анапа", "avatar": "https://dummyimage.com/731x126", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 8, "fields": {"password": "pbkdf2_sha256$600000$fdUiBG2TlsJBHHPAcw2wk9$6d6ue291U23rfCl8awDRPq+vr55xpRvkd0odVpkEVN0=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:49.701Z", "email": "vladimirovhariton@example.net", "telegram_id": "6309910328", "phone": "+7 683 031 2896", "city": "клх Сарапул", "avatar": "https://picsum.photos/316/508", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 9, "fields": {"password": "pbkdf2_sha256$600000$pzuqtwWf9xoFMOckWiE7wr$DJ1aTn3IRqUvNLDdRySHscHBA36X1coy4JUXHNVaF1k=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:49.938Z", "email": "ipati1970@example.net", "telegram_id": "6309910328", "phone": "8 (953) 200-50-22", "city": "клх Анадырь", "avatar": "https://placekitten.com/327/749", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 10, "fields": {"password": "pbkdf2_sha256$600000$UOZqiDhxRU2EsXl2pciWjQ$tTpstzWDdS8meqVlZvskxgBFwDzOj0bjx+87B6ibKFs=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:50.177Z", "email": "esmirnova@example.org", "telegram_id": "6309910328", "phone": "+7 (954) 233-48-53", "city": "к. Котельнич", "avatar": "https://picsum.photos/203/314", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 11, "fields": {"password": "pbkdf2_sha256$600000$Clfo35JhC839jW4kBu4LCo$NktMld+TouSbq4Z92ur+NArkuBBI9ktTu44m37wgTtY=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:50.418Z", "email": "anani_2014@example.com", "telegram_id": "6309910328", "phone": "85103037873", "city": "п. Карталы", "avatar": "https://placekitten.com/722/758", "role": "member", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 12, "fields": {"password": "pbkdf2_sha256$600000$XrDt3Yyrbi1HsU1vMiHjz7$GWLl9Qb2L29PejOKPmvaWRyd3xNdfwAcYOcVuBEsSrM=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-01-18T18:39:50.654Z", "email": "aggemihalov@example.com", "telegram_id": "6309910328", "phone": "+7 (184) 999-71-20", "city": "клх Армавир", "avatar": "https://placekitten.com/175/310", "role": "member", "groups": [], "user_permissions": []}}]
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$mdx6B7hgmGFPmaN2wq2iER$I8qBRJ9kB9QaGwrj4R6V39lmsNZcLYjn2+STa7CMRww=",
+      "last_login": "2024-01-18T17:06:55.346Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-12-21T15:58:57.720Z",
+      "email": "admin@admin.admin",
+      "telegram_id": null,
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$Ltow0CJ5xEb5mxsDlQtTah$5dpAThU6AmPStrDHz1gdGxwekBZumpJnEKh7cZ2f7Yk=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-12-21T16:04:19.677Z",
+      "email": "mod@mod.mod",
+      "telegram_id": null,
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$5ATjhYxXJCi97LTViJkvYG$oOVakvAiCKAy+pV3CBGrrFT5snnIhJdnkz4KV8h1/84=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:48.515Z",
+      "email": "grigorevevgraf@example.net",
+      "telegram_id": "6309910328",
+      "phone": "8 (607) 391-5704",
+      "city": "п. Шелагонцы",
+      "avatar": "https://dummyimage.com/742x655",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$3B4nophxTFL7ZkxUNREwe4$gezU1RcQ/9p/CQbPcYV4GqvNkri8s9flleuUYnqSbzA=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:48.757Z",
+      "email": "mechislav2019@example.org",
+      "telegram_id": "6309910328",
+      "phone": "8 062 425 52 59",
+      "city": "п. Старая Русса",
+      "avatar": "https://dummyimage.com/920x37",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$cCYoEkKq44fibUbCv6DxZP$aoehky/ZqbI2dfzqpBy3VeAqGbDF3VkiClZOCugBP+s=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:48.996Z",
+      "email": "evdokim_31@example.org",
+      "telegram_id": "6309910328",
+      "phone": "83947331368",
+      "city": "ст. Бавлы",
+      "avatar": "https://placekitten.com/59/535",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Q4C3P73PC5HQ67Ng8wXsAy$4SgqWRDQ3nzNGpaLNsXSb8z9CE7n1W/Rbfj/Ou9Jyv4=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:49.233Z",
+      "email": "samson_57@example.com",
+      "telegram_id": "6309910328",
+      "phone": "8 101 971 76 20",
+      "city": "ст. Осташков",
+      "avatar": "https://picsum.photos/883/693",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$BSoix4UaIxeKQN7glln8YX$10jQGNnw9dm1zBz0tFSTwuBapXMl7O+z3fz+CljHHt0=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:49.465Z",
+      "email": "tvorimir_1996@example.org",
+      "telegram_id": "6309910328",
+      "phone": "81049701635",
+      "city": "г. Анапа",
+      "avatar": "https://dummyimage.com/731x126",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$fdUiBG2TlsJBHHPAcw2wk9$6d6ue291U23rfCl8awDRPq+vr55xpRvkd0odVpkEVN0=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:49.701Z",
+      "email": "vladimirovhariton@example.net",
+      "telegram_id": "6309910328",
+      "phone": "+7 683 031 2896",
+      "city": "клх Сарапул",
+      "avatar": "https://picsum.photos/316/508",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$pzuqtwWf9xoFMOckWiE7wr$DJ1aTn3IRqUvNLDdRySHscHBA36X1coy4JUXHNVaF1k=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:49.938Z",
+      "email": "ipati1970@example.net",
+      "telegram_id": "6309910328",
+      "phone": "8 (953) 200-50-22",
+      "city": "клх Анадырь",
+      "avatar": "https://placekitten.com/327/749",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$UOZqiDhxRU2EsXl2pciWjQ$tTpstzWDdS8meqVlZvskxgBFwDzOj0bjx+87B6ibKFs=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:50.177Z",
+      "email": "esmirnova@example.org",
+      "telegram_id": "6309910328",
+      "phone": "+7 (954) 233-48-53",
+      "city": "к. Котельнич",
+      "avatar": "https://picsum.photos/203/314",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Clfo35JhC839jW4kBu4LCo$NktMld+TouSbq4Z92ur+NArkuBBI9ktTu44m37wgTtY=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:50.418Z",
+      "email": "anani_2014@example.com",
+      "telegram_id": "6309910328",
+      "phone": "85103037873",
+      "city": "п. Карталы",
+      "avatar": "https://placekitten.com/722/758",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$XrDt3Yyrbi1HsU1vMiHjz7$GWLl9Qb2L29PejOKPmvaWRyd3xNdfwAcYOcVuBEsSrM=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T18:39:50.654Z",
+      "email": "aggemihalov@example.com",
+      "telegram_id": "6309910328",
+      "phone": "+7 (184) 999-71-20",
+      "city": "клх Армавир",
+      "avatar": "https://placekitten.com/175/310",
+      "role": "member",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]
