@@ -46,15 +46,15 @@ services:
       db:
         condition: service_healthy
 
-#  celery_worker:
-#    build: .
-#    env_file: .env
-#    tty: true
-#    command: celery -A config worker -l INFO
-#    depends_on:
-#      - redis
-#      - app
-#
+  celery_worker:
+    build: .
+    env_file: .env
+    tty: true
+    command: celery -A config worker -l INFO
+    depends_on:
+      - redis
+      - app
+
 #  celery_beat:
 #    build: .
 #    env_file: .env
