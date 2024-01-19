@@ -45,6 +45,11 @@ services:
         condition: service_healthy
       db:
         condition: service_healthy
+    healthcheck:
+      test: [ "CMD-SHELL", "python3 manage.py shell" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   celery_worker:
     build: .
@@ -52,17 +57,19 @@ services:
     tty: true
     command: celery -A config worker -l INFO
     depends_on:
-      - redis
-      - app
+      app:
+        condition: service_healthy
 
-#  celery_beat:
-#    build: .
-#    env_file: .env
-#    tty: true
-#    command: celery -A config beat -l INFO -S django
-#    depends_on:
-#      - redis
-#      - app
+  celery_beat:
+    build: .
+    env_file: .env
+    tty: true
+    command: celery -A config beat -l INFO -S django
+    depends_on:
+      app:
+        condition: service_healthy
+      celery_worker:
+        condition: service_started
 
 volumes:
   pg_data:
