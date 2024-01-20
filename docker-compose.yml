@@ -16,10 +16,10 @@ services:
     image: postgres
     environment:
       - POSTGRES_PASSWORD=ghjcnjq77
-      - PGDATA=/home/viktorlov/PycharmProjects/habitos/pgdata
+      - PGDATA=/var/lib/postgresql/data/pgdata
     env_file: .env
     volumes:
-      - pg_data:/home/viktorlov/PycharmProjects/habitos/pgdata
+      - /custom/mount:/var/lib/postgresql/data
     ports:
       - '5432:5432'
     healthcheck:
