@@ -14,9 +14,6 @@ services:
 
   db:
     image: postgres
-    environment:
-      - POSTGRES_PASSWORD=ghjcnjq77
-      - PGDATA=/var/lib/postgresql/data/pgdata
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
