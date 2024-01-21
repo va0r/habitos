@@ -1,0 +1,12 @@
+.chmod
+.coverage
+.coveragerc
+.env.SAMPLE
+.flake8
+.git
+.gitignore
+.idea
+.venv
+coverage_html_report
+flake8_text_report
+scripts

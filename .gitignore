@@ -1,8 +1,6 @@
-/.idea/
-/venv/
 .env
-/.pytest_cache/
-/logs/
-/.coverage
-/celerybeat-schedule
 /.chmod
+/.coverage
+/.idea/
+/.pytest_cache/
+/venv/
