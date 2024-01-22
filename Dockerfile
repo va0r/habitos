@@ -1,7 +1,7 @@
-FROM python:3.11
+FROM python:alpine
 
 WORKDIR /code
 
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
