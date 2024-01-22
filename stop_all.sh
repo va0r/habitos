@@ -11,3 +11,5 @@ while sudo fuser -k 6379/tcp ; do
 done ; \
 
 sudo sysctl vm.overcommit_memory=1 ; \
+
+#docker image ls | grep -v latest | awk '{if(NR>1) print $3}'
