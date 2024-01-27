@@ -30,8 +30,7 @@ services:
   app:
     build: .
     tty: true
-    command: sh -c "python3 manage.py makemigrations ; \
-                    python3 manage.py migrate ; \ 
+    command: sh -c "python3 manage.py migrate ; \ 
                     python3 manage.py loaddata /code/data/*.json ; \
                     python3 manage.py runserver 0.0.0.0:8000"
     ports:
